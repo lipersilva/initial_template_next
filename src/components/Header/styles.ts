@@ -30,7 +30,7 @@ export const NavLinkContainer = styled.li<NavLinkProps>`
     transition: 0.5s;
 
     &:hover {
-      color${props => 
+      color: ${props => 
         props.isActive 
           ? lighten(0.2, props.theme.primary) 
           : lighten(0.2, props.theme.textHighlight)};
