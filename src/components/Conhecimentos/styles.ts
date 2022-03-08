@@ -65,12 +65,12 @@ export const ConhecimentoContainer = styled.div`
   }
   /* @media (max-width: 700px){
     p {
-      font-size: 1rem;
+      font-size: 0.8rem;
     }
 
     svg{
-      width: 5rem;
-      height: 5rem;
+      width: 3rem;
+      height: 3rem;
     }
   } */
 `

@@ -6,7 +6,7 @@ import ProjectItens from './ProjectItens';
 import { Container } from './styles';
 
 
-function Projects() {
+function Projetos() {
   return (
     <Container>
       <SectionTitle title="Últimos Projetos"/>
@@ -40,4 +40,4 @@ function Projects() {
   );
 };
 
-export default Projects;
+export default Projetos;

@@ -1,8 +1,10 @@
 import Conhecimentos from '../components/Conhecimentos';
 import Experience from '../components/Experience';
+import Footer from '../components/Footer';
+import FormContato from '../components/FormContato';
 import Header from '../components/Header';
 import HomeHero from '../components/HomeHero';
-import Projects from '../components/Projects';
+import Projetos from '../components/Projetos';
 import { HomeContainer } from '../styles/HomeStyles';
 
 export default function Home() {
@@ -12,9 +14,12 @@ export default function Home() {
         <main className="container">
           <HomeHero/>
           <Experience/>
-          <Projects/>
+          <Projetos/>
           <Conhecimentos/>
+          <FormContato />
         </main>
+
+        <Footer/>
     </HomeContainer>
     
   );
