@@ -10,6 +10,7 @@ export const Container = styled.div`
   h1 {
     color: ${({ theme }) => theme.primary} ;
     font-size: 4.5rem ;
+    margin-top: 5rem ;
   }
 
   h2 {
