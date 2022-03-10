@@ -92,7 +92,7 @@ export const CodeItem = styled.pre`
   color: #ffff;
   width: 24rem;
   align-self: flex-start;
-  transition: 1s;
+  transition: 1s ;
 
   @media (max-width: 1450px) {
     width: 18rem;

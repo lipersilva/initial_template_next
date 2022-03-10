@@ -1,17 +1,10 @@
-import { GetStaticProps } from 'next';
-import Conhecimentos from '../components/Conhecimentos';
-import Experience from '../components/Experience';
-import Footer from '../components/Footer';
-import FormContato from '../components/FormContato';
-import Header from '../components/Header';
-import HomeHero from '../components/HomeHero';
-import Projetos from '../components/Projetos';
-import { getPrismicClient } from '../services/prismic';
-import { HomeContainer } from '../styles/HomeStyles';
+import { GetStaticProps } from "next";
+import Header from "../../components/Header";
+import ProjetoItem from "../../components/ProjetoItem";
+import { getPrismicClient } from "../../services/prismic";
+import { ProjetosContainer } from "../../styles/ProjetosStyles";
 import Prismic from '@prismicio/client'
-import { useEffect } from 'react';
-import Aos from 'aos';
-import 'aos/dist/aos.css';
+
 interface IProjeto{
   slug: string;
   title: string;
@@ -21,29 +14,30 @@ interface IProjeto{
   thumbnail: string;
 }
 
-interface HomeProps{
+interface ProjetosProps{
   projetos: IProjeto[];
 }
 
-export default function Home({ projetos }: HomeProps) {
-  useEffect(() => {
-    Aos.init({ duration: 1500}); // 1.5s
-  })
 
-  return (
-    <HomeContainer>
+export default function Projetos ({ projetos }: ProjetosProps) {
+  return(
+    <ProjetosContainer>
       <Header/>
       <main className="container">
-        <HomeHero/>
-        <Experience/>
-        <Projetos projetos={projetos}/>
-        <Conhecimentos/>
-        <FormContato />
+        {projetos.map(projeto => (
+          <ProjetoItem 
+          key={projeto.slug}
+          title={projeto.title}
+          type={projeto.type}
+          imgUrl={projeto.thumbnail}
+          slug={projeto.slug}
+        />
+
+        ))}
+        
       </main>
 
-      <Footer/>
-    </HomeContainer>
-    
+    </ProjetosContainer>
   );
 }
 

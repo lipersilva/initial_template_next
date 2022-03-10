@@ -1,34 +1,35 @@
-
-
 import Link from 'next/link';
 import SectionTitle from '../SectionTitle';
 import ProjectItens from './ProjectItens';
 import { Container } from './styles';
 
+interface IProjeto{
+  slug: string;
+  title: string;
+  type: string;
+  description: string;
+  link: string;
+  thumbnail: string;
+}
 
-function Projetos() {
+interface ProjetosProps{
+  projetos: IProjeto[];
+}
+
+function Projetos({ projetos }: ProjetosProps ) {
   return (
     <Container>
       <SectionTitle title="Últimos Projetos"/>
         <section>
-          <ProjectItens
-            img=""
-            title="Projeto 01"
-            type="Website"
-            slug="teste"
-          />
-          <ProjectItens
-            img=""
-            title="Projeto 02"
-            type="Website"
-            slug="teste"
-          />
-          <ProjectItens
-            img=""
-            title="Projeto 03"
-            type="Website"
-            slug="teste"
-          />
+          {projetos.slice(0,3).map(projeto => (
+            <ProjectItens 
+            key={projeto.slug}
+            img={projeto.thumbnail}
+            title={projeto.title}
+            type={projeto.type}
+            slug={projeto.slug}
+            />
+          ))}
         </section>
 
         <button type="button">
