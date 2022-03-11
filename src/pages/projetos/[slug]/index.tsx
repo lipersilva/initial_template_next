@@ -7,6 +7,7 @@ import Prismic from '@prismicio/client'
 import LoadingScreen from "../../../components/LoadingScreen";
 import { useRouter } from "next/router";
 import { RichText } from "prismic-dom";
+import Head from "next/head";
 
 
 interface IProjeto{
@@ -32,6 +33,21 @@ export default function Projeto({ projeto }: ProjetoProps) {
   
   return(
     <ProjetoContainer>
+      <Head>
+        <title>{projeto.title} | Meu portfólio</title>
+        <meta
+          name="description"
+          content={projeto.description}
+        />
+        <meta property="og:image" content={projeto.thumbnail} />
+        <meta property="og:image:secure_url" content={projeto.thumbnail} />
+        <meta name="twitter:image" content={projeto.thumbnail} />
+        <meta name="twitter:image:src" content={projeto.thumbnail} />
+        <meta
+          property="og:description"
+          content={projeto.description}
+        />
+      </Head>
       <Header/>
       <BannerProjeto
         title={projeto.title}
