@@ -88,7 +88,7 @@ export const getStaticProps: GetStaticProps = async context => {
 
   const response = await prismic.getByUID('projeto', String(slug), {});
 
-  console.log(response); //verificar depois a thumbnail
+  //console.log(response); //verificar depois a thumbnail
   const projeto = {
     slug: response.uid,
     title: response.data.title,
